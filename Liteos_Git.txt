@@ -1,0 +1,43 @@
+
+
+
+开发的第一步，是clone代码到本地PC
+  git clone https://github.com/mychaser/LiteOS.git
+
+  clone之后checkout到smartcar分支
+
+  git checkout -b smartcar origin/smartcar
+  
+  ***************************************************************
+  //git 手册 git checkout -b <branch> --track <remote>/<branch>
+  ***************************************************************
+  
+然后在该分支进行开发，开发完成之后，进行git add 添加代码到PC本地的仓库，然后git commit提交到PC本地仓库。
+由于在开发的过程中，LiteOS的主仓库可能已经更新的许多新的内容，所以建议提交代码到自己账户下的仓库时先同步LiteOS的主仓库的内容，步骤示意如下：
+  git remote add upstream https://github.com/LITEOS/LiteOS
+
+  git remote update upstream
+
+  git merge upstream/develop
+
+  如果存在冲突，请解决冲突，然后在merge
+  
+  merge后，自己在本地仓库中添加的全新文件夹（数篇 makefile word 文档）不会与 upstream 仓库拉下来的更新有冲突
+  
+  ***************************************************************
+  猜测：自己在本地仓库中更改与 upstream 仓库中同名的文件会产生冲突
+  ***************************************************************
+  
+以上步骤完成之后，再进行git push origin smartcar操作，将代码提交到自己账户的github smartcar分支
+说明：所有git命令相关内容，如果不熟悉，请自行google或者baidu查找。
+
+
+
+Untracked files:
+***************************************************************
+  (use "git add <file>..." to include in what will be committed)
+***************************************************************
+        Liteos_Git.txt
+		
+
+nothing added to commit but untracked files present (use "git add" to track)
